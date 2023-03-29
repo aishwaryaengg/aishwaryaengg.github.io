@@ -20,91 +20,54 @@ body, html {
  #header, body{
    color:black !important;
  }
+ .button-rdr {
+  --c: #1095c1; /* the color */
+  --b: .1em;    /* border length*/
+  --d: 20px;    /* the cube depth */
+  --h: 1.2em;   /* the height */
   
- .btn {
-	background: hsl(var(--hue), 98%, 80%);
-	border: none;
-	border-radius: 7px;
-	cursor: pointer;
-	color: black;
-	font: 600 1.05rem/1 "Nunito", sans-serif;
-	letter-spacing: .05em;
-	overflow: hidden;
-	padding: 1.15em 3.5em;
-	min-height: 3.3em;
-	position: relative;
-	text-transform: lowercase;
+  --_s: calc(var(--d) + var(--b));
 
-	&--yellow {
-		--hue: 46;
-	}
-
-	&--green {
-		--hue: 163;
-	}
-
-	&--purple {
-		--hue: 244;
-	}
-
-	&--red {
-		--hue: 0;
-	}
-
-	&--blue {
-		--hue: 210;
-	}
-
-	&:active,
-	&:focus {
-		outline: 3px solid hsl(calc(var(--hue) + #{$hueStep}), 98%, 80%);
-	}
-
-	& + & {
-		margin-top: 2.5em;
-	}
-
-	&__txt {
-		position: relative;
-		z-index: 2;
-	}
-
-	&__bg {
-		background: hsl(var(--hueBg), 98%, 80%);
-		border-radius: 50%;
-		display: block;
-		height: 0;
-		left: 50%;
-		margin: -50% 0 0 -50%;
-		padding-top: 100%;
-		position: absolute;
-		top: 50%;
-		width: 100%;
-		transform: scale(0);
-		transform-origin: 50% 50%;
-		transition: transform 0.175s cubic-bezier(0.5, 1, 0.89, 1); 
-		z-index: 1;
-
-		@for $i from 1 through 4 { 
-			&:nth-of-type(#{$i}) {
-				--hueBg: calc(var(--hue) - #{$i * $hueStep});
-				transition-delay: $delayStep / 2 * (4 - $i);
-			}
-		}
-
-		.btn:hover &,
-		.btn:focus &,
-		.btn:active & {
-			transform: scale(1.5);
-			transition: transform 0.35s cubic-bezier(0.11, 0, 0.5, 0);
-
-			@for $i from 1 through 4 {
-				&:nth-of-type(#{$i}) {
-					transition-delay: $delayStep * $i;
-				}
-			}
-		}
-	}
+  line-height: var(--h);
+  color: #0000;
+  text-shadow: 
+    0 calc(-1*var(--_t,0em)) var(--c), 
+    0 calc(var(--h) - var(--_t,0em)) #fff;
+  border: solid #0000;
+  overflow: hidden;
+  border-width: var(--b) var(--b) var(--_s) var(--_s);
+  background:
+    linear-gradient(var(--c) 0 0) 100% 100%
+     /101% var(--_p,0%) no-repeat,
+    conic-gradient(at left var(--d)  bottom var(--d),
+      #0000 90deg, rgb(255 255 255 /0.3) 0 225deg,rgb(255 255 255 /0.6) 0) border-box,
+    conic-gradient(at left var(--_s) bottom var(--_s),
+      #0000 90deg,var(--c) 0) 0 100%/calc(100% - var(--b)) calc(100% - var(--b))  border-box;
+  transform: translate(calc(var(--d)/-1),var(--d));
+  clip-path: 
+    polygon(
+     var(--d) 0%, 
+     var(--d) 0%, 
+     100% 0%, 
+     100% calc(100% - var(--d)),
+     100% calc(100% - var(--d)),
+     var(--d) calc(100% - var(--d))
+    );
+  transition: 0.5s;
+}
+.button-rdr:hover {
+  transform: translate(0,0);
+  clip-path: 
+    polygon(
+     0% var(--d), 
+     var(--d) 0%, 
+     100% 0%, 
+     100% calc(100% - var(--d)), 
+     calc(100% - var(--d)) 100%, 
+     0% 100%
+   );
+  --_t: var(--h);
+  --_p: 105%;
 }
 </style>
 </head>
@@ -147,12 +110,6 @@ body, html {
   <br>
   From M/S AISHWARYA ENGINEERING WORKS.
 </h6>
-  <button type="button" class="btn btn--blue">
-	<span class="btn__txt">Blue button</span>
-	<i class="btn__bg" aria-hidden="true"></i>
-	<i class="btn__bg" aria-hidden="true"></i>
-	<i class="btn__bg" aria-hidden="true"></i>
-	<i class="btn__bg" aria-hidden="true"></i>
-</button>
+ <h3 href="https://aishwaryaengg.github.io/" class="button-rdr">Go back</h3>
 </body>
 </html>
