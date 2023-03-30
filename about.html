@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
+
+body, html {
+  height: 100%;
+  line-height: 1.8;
+}
+
+.w3-bar .w3-button {
+  padding: 16px;
+}
+ #header, body{
+   color:black !important;
+ }
+ .button-rdr {
+  --c: #1095c1; /* the color */
+  --b: .1em;    /* border length*/
+  --d: 20px;    /* the cube depth */
+  --h: 1.2em;   /* the height */
+  
+  --_s: calc(var(--d) + var(--b));
+
+  line-height: var(--h);
+  color: #0000;
+  text-shadow: 
+    0 calc(-1*var(--_t,0em)) var(--c), 
+    0 calc(var(--h) - var(--_t,0em)) #fff;
+  border: solid #0000;
+  overflow: hidden;
+  border-width: var(--b) var(--b) var(--_s) var(--_s);
+  background:
+    linear-gradient(var(--c) 0 0) 100% 100%
+     /101% var(--_p,0%) no-repeat,
+    conic-gradient(at left var(--d)  bottom var(--d),
+      #0000 90deg, rgb(255 255 255 /0.3) 0 225deg,rgb(255 255 255 /0.6) 0) border-box,
+    conic-gradient(at left var(--_s) bottom var(--_s),
+      #0000 90deg,var(--c) 0) 0 100%/calc(100% - var(--b)) calc(100% - var(--b))  border-box;
+  transform: translate(calc(var(--d)/-1),var(--d));
+  clip-path: 
+    polygon(
+     var(--d) 0%, 
+     var(--d) 0%, 
+     100% 0%, 
+     100% calc(100% - var(--d)),
+     100% calc(100% - var(--d)),
+     var(--d) calc(100% - var(--d))
+    );
+  transition: 0.5s;
+}
+.button-rdr:hover {
+  transform: translate(0,0);
+  clip-path: 
+    polygon(
+     0% var(--d), 
+     var(--d) 0%, 
+     100% 0%, 
+     100% calc(100% - var(--d)), 
+     calc(100% - var(--d)) 100%, 
+     0% 100%
+   );
+  --_t: var(--h);
+  --_p: 105%;
+}
+</style>
+</head>
+<body>
+<nav class="w3-sidebar w3-bar-block w3-black w3-card w3-animate-left w3-hide-medium w3-hide-large" style="display:none" id="mySidebar">
+  <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-large w3-padding-16">Close ×</a>
+  <a href="https://aishwaryaengg.github.io/introduction.html" onclick="w3_close()" class="w3-bar-item w3-button">INTRODUCTION</a>
+  <a href="https://aishwaryaengg.github.io/about.html" onclick="w3_close()" class="w3-bar-item w3-button">ABOUT</a>
+  <a href="#work" onclick="w3_close()" class="w3-bar-item w3-button">WORK</a>
+  <a href="#pricing" onclick="w3_close()" class="w3-bar-item w3-button">PRICING</a>
+  <a href="#contact" onclick="w3_close()" class="w3-bar-item w3-button">CONTACT</a>
+</nav>
+  <h1 id="header" class="w3-xxlarge w3-hide-large w3-hide-medium">ABOUT</h1>
+  <h6>
+Since 1997 we have been doing fabrication, erections, maintenance and structural business<br>
+in the name of AISHWARYA ENGINEERING WORKS committed to being a service provider to<br>
+clients throughout the region. Today, we are operating from our original location offering all<br>
+kind of structural, pipeline fabrication, erection, maintenance works as well as man power<br>
+supply in all industries, with a workforce of over 50, our experienced team is embedded<br>
+with good skills and abilities enabling us to meet any kind of challenge in our field. We have<br>
+the capability, facility and equipment to do small, medium and large tasks in any of the<br>
+industries we work within. We undertake projects in a manner that provides value to our<br>
+clients. to reach our objective we plan, implement and improve our services, skill and<br>
+competencies of our workforce. We respond very quickly to the needs of our clients. We<br>
+promote loyalty and commitment amongst all our employees for our clients. Our first<br>
+commitment is to provide best services on time to our clients.<br>
+</h6>
+  <h1 id="header" class="w3-xxlarge w3-hide-large w3-hide-medium">OUR KEYS TO SUCCESS</h1>
+ <h6>
+1- Providing good quality service on time and on low budget to our clients.
+2- Working honestly and developing strategy to gauge performance and build trust
+with our clients.
+3- Working closely with our customers and communicating with transparency.
+</h6>
+ <h1 id="header" class="w3-xxlarge w3-hide-large w3-hide-medium">OUR KEYS TO SUCCESS</h1>
+ <h6>
+1- Providing good quality service on time and on low budget to our clients.<br>
+2- Working honestly and developing strategy to gauge performance and build trust<br>
+with our clients.<br>
+3- Working closely with our customers and communicating with transparency.<br>
+</h6>
+ <h1 id="header" class="w3-xxlarge w3-hide-large w3-hide-medium">OUR VISION</h1>
+ <h6>
+Our vision is to become a leader in the engineering industry across India, providing<br>
+outstanding performance in quality, keeping safety, and delivering projects on time, to<br>
+satisfy all our clients, and their schedule and specification.<br>
+</h6>
+ <button onclick="pagerdr()" class="button-rdr">Go back</h3>
+</body>
+ <script>
+   function pagerdr() {
+    window.location.href = "https://aishwaryaengg.github.io"; 
+   }
+ </script>
+</html>
