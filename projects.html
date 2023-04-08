@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body,h1,h2,h3,h4,h5,h6 {
+  font-family: "Raleway", sans-serif
+}
+h1,h2,h3,h4,h5,h6 {
+  padding-left: 50px;
+}
+body, html {
+  height: 100%;
+  line-height: 1.8;
+}
+
+.w3-bar .w3-button {
+  padding: 16px;
+}
+ #header, body{
+   color:black !important;
+ }
+ .button-rdr {
+  --c: #ff9800; /* the color */
+  --b: .1em;    /* border length*/
+  --d: 20px;    /* the cube depth */
+  --h: 1.2em;   /* the height */
+  
+  --_s: calc(var(--d) + var(--b));
+
+  line-height: var(--h);
+  color: #0000;
+  text-shadow: 
+    0 calc(-1*var(--_t,0em)) var(--c), 
+    0 calc(var(--h) - var(--_t,0em)) #fff;
+  border: solid #0000;
+  overflow: hidden;
+  border-width: var(--b) var(--b) var(--_s) var(--_s);
+  background:
+    linear-gradient(var(--c) 0 0) 100% 100%
+     /101% var(--_p,0%) no-repeat,
+    conic-gradient(at left var(--d)  bottom var(--d),
+      #0000 90deg, rgb(255 255 255 /0.3) 0 225deg,rgb(255 255 255 /0.6) 0) border-box,
+    conic-gradient(at left var(--_s) bottom var(--_s),
+      #0000 90deg,var(--c) 0) 0 100%/calc(100% - var(--b)) calc(100% - var(--b))  border-box;
+  transform: translate(calc(var(--d)/-1),var(--d));
+  clip-path: 
+    polygon(
+     var(--d) 0%, 
+     var(--d) 0%, 
+     100% 0%, 
+     100% calc(100% - var(--d)),
+     100% calc(100% - var(--d)),
+     var(--d) calc(100% - var(--d))
+    );
+  transition: 0.5s;
+}
+.button-rdr:hover {
+  transform: translate(0,0);
+  clip-path: 
+    polygon(
+     0% var(--d), 
+     var(--d) 0%, 
+     100% 0%, 
+     100% calc(100% - var(--d)), 
+     calc(100% - var(--d)) 100%, 
+     0% 100%
+   );
+  --_t: var(--h);
+  --_p: 105%;
+}
+</style>
+</head>
+<body>
+<div class="w3-top">
+  <div class="w3-bar w3-white w3-card" id="myNavbar">
+    <a href="https://aishwaryaengg.github.io/" class="w3-bar-item w3-button w3-wide"><image src="images/ai engg logo.png" width="89px" height="59px"></a>
+    <div class="w3-right w3-hide-small">
+      <a href="https://aishwaryaengg.github.io/introduction.html" class="w3-bar-item w3-button">INTRODUCTION</a>
+      <a href="https://aishwaryaengg.github.io/about.html" class="w3-bar-item w3-button"><i class="fa fa-user"></i> ABOUT</a>
+      <a href="https://aishwaryaengg.github.io/work.html" class="w3-bar-item w3-button"><i class="fa fa-th"></i> WORK</a>
+      <a href="https://aishwaryaengg.github.io/staff.html" class="w3-bar-item w3-button"></i> STAFF</a>
+      <a href="https://aishwaryaengg.github.io/projects.html" class="w3-bar-item w3-button"> PROJECTS AND CONTRACTS</a>
+    </div>
+    <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium" onclick="w3_open()">
+      <i class="fa fa-bars"></i>
+    </a>
+  </div>
+</div>
+<nav class="w3-sidebar w3-bar-block w3-black w3-card w3-animate-left w3-hide-medium w3-hide-large" style="display:none" id="mySidebar">
+  <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-large w3-padding-16">Close x</a>
+  <a href="https://aishwaryaengg.github.io/introduction.html" onclick="w3_close()" class="w3-bar-item w3-button">INTRODUCTION</a>
+  <a href="https://aishwaryaengg.github.io/about.html" onclick="w3_close()" class="w3-bar-item w3-button">ABOUT/a>
+  <a href="https://aishwaryaengg.github.io/work.html" onclick="w3_close()" class="w3-bar-item w3-button">WORK</a>
+  <a href="https://aishwaryaengg.github.io/staff.html" onclick="w3_close()" class="w3-bar-item w3-button"> STAFF</a>
+  <a href="https://aishwaryaengg.github.io/projects.html" onclick="w3_close()" class="w3-bar-item w3-button"> PROJECTS AND CONTRACTS</a>
+</nav>
+<br><br><br><br>
+<h1 class="w3-xxlarge w3-text-orange">OUR PROJECTS AND CONTRACTS</h1>
+ <h6>
+  We have done many projects and have many annual contracts with various companies. Here are all of them -<br><br>
+</h6>
+
+<image src="/images/aishwarya projects.png">
+  <br><br>
+  <image src="/images/aishwarya contracts.png"><br><br>
+ <button onclick="pagerdr()" class="button-rdr">Go back</h3>
+</body>
+ <script>
+   function pagerdr() {
+    window.location.href = "https://aishwaryaengg.github.io"; 
+   }
+   var mySidebar = document.getElementById("mySidebar");
+
+function w3_open() {
+  if (mySidebar.style.display === 'block') {
+    mySidebar.style.display = 'none';
+  } else {
+    mySidebar.style.display = 'block';
+  }
+}
+
+// Close the sidebar with the close button
+function w3_close() {
+    mySidebar.style.display = "none";
+}
+ </script>
+</html>
